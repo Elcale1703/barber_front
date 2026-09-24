@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Barbería PRO - Panel de Administración & Barberos",
-  description: "Sistema integral de citas, horarios, servicios y gestión para barberías profesionales",
+  title: "Barberia PRO - Administration & Barber Panel",
+  description: "Comprehensive appointment, scheduling, services, and management system for professional barbershops",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="es"
+      lang="en"
       className={cn(
         "dark h-full antialiased",
         geistSans.variable,

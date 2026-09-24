@@ -52,9 +52,9 @@ export function AppointmentList({
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-900 text-zinc-400 mb-3 border border-zinc-800">
           <Calendar className="w-6 h-6" />
         </div>
-        <h4 className="text-sm font-bold text-white">No hay citas registradas</h4>
+        <h4 className="text-sm font-bold text-white">No appointments found</h4>
         <p className="mt-1 text-xs text-zinc-400 max-w-sm mx-auto">
-          No se encontraron citas con los filtros seleccionados. Puedes agendar una nueva cita en el botón superior.
+          No appointments match the selected filters. You can book a new one using the button above.
         </p>
       </div>
     );
@@ -63,12 +63,12 @@ export function AppointmentList({
   return (
     <div className="space-y-3">
       {appointments.map((apt) => {
-        const clientName = apt.client?.name || 'Cliente sin registrar';
-        const clientPhone = apt.client?.phone || 'Sin teléfono';
-        const serviceName = apt.service?.name || 'Servicio';
+        const clientName = apt.client?.name || 'Unregistered client';
+        const clientPhone = apt.client?.phone || 'No phone';
+        const serviceName = apt.service?.name || 'Service';
         const servicePrice = apt.service?.price || 0;
         const duration = apt.service?.duration || 30;
-        const barberName = apt.barber?.name || 'Barbero Staff';
+        const barberName = apt.barber?.name || 'Barber Staff';
 
         return (
           <div
@@ -131,7 +131,7 @@ export function AppointmentList({
                   className="h-8 text-xs border-zinc-800 hover:bg-zinc-800 hover:text-white"
                 >
                   <Edit className="w-3.5 h-3.5 mr-1" />
-                  Estado
+                  Status
                 </Button>
 
                 {apt.status !== 'CANCELLED' && apt.status !== 'COMPLETED' && (
@@ -139,12 +139,12 @@ export function AppointmentList({
                     size="sm"
                     variant="ghost"
                     onClick={() => {
-                      if (confirm('¿Estás seguro de cancelar esta cita?')) {
+                      if (confirm('Are you sure you want to cancel this appointment?')) {
                         onCancel(apt.id);
                       }
                     }}
                     className="h-8 text-xs text-zinc-400 hover:text-rose-400 hover:bg-rose-500/10"
-                    title="Cancelar Cita"
+                    title="Cancel Appointment"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </Button>

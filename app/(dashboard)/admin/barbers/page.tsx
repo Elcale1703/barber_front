@@ -44,8 +44,8 @@ export default function BarbersManagementPage() {
   return (
     <div className="min-h-full pb-12">
       <Header
-        title="Equipo de Barberos"
-        subtitle="Gestión de profesionales, asignación de servicios y horarios semanales"
+        title="Barber Team"
+        subtitle="Manage professionals, assign services and weekly schedules"
       />
 
       <div className="p-6 max-w-7xl mx-auto space-y-6">
@@ -53,10 +53,10 @@ export default function BarbersManagementPage() {
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-sm font-bold text-white">
-              Barberos Registrados ({barbers.length})
+              Registered Barbers ({barbers.length})
             </h3>
             <p className="text-xs text-zinc-400">
-              Configura los turnos laborales y las habilidades de cada barbero
+              Configure shifts and skills for each barber
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export default function BarbersManagementPage() {
             className="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-semibold text-xs gap-1.5 h-9"
           >
             <UserPlus className="w-4 h-4" />
-            <span>Nuevo Barbero</span>
+            <span>New Barber</span>
           </Button>
         </div>
 

@@ -12,12 +12,12 @@ import { Calendar, Filter, Plus, Search, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const STATUS_TABS: { label: string; status?: AppointmentStatus }[] = [
-  { label: 'Todas' },
-  { label: 'Confirmadas', status: 'CONFIRMED' },
-  { label: 'Pendientes', status: 'PENDING' },
-  { label: 'Completadas', status: 'COMPLETED' },
-  { label: 'Canceladas', status: 'CANCELLED' },
-  { label: 'No Asistió', status: 'NO_SHOW' },
+  { label: 'All' },
+  { label: 'Confirmed', status: 'CONFIRMED' },
+  { label: 'Pending', status: 'PENDING' },
+  { label: 'Completed', status: 'COMPLETED' },
+  { label: 'Cancelled', status: 'CANCELLED' },
+  { label: 'No Show', status: 'NO_SHOW' },
 ];
 
 export function AppointmentsManagementPage() {
@@ -46,8 +46,8 @@ export function AppointmentsManagementPage() {
   return (
     <div className="min-h-full pb-12">
       <Header
-        title="Gestión de Citas & Agenda"
-        subtitle="Monitoreo, programación y actualización de estados en tiempo real"
+        title="Appointments & Schedule"
+        subtitle="Real-time monitoring, scheduling and status updates"
         onNewAppointment={() => setNewAptModalOpen(true)}
       />
 
@@ -78,7 +78,7 @@ export function AppointmentsManagementPage() {
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-3">
               <div className="flex items-center gap-2">
-                <span className="text-xs text-zinc-400">Barbero:</span>
+                <span className="text-xs text-zinc-400">Barber:</span>
                 <select
                   value={selectedBarberId || ''}
                   onChange={(e) =>
@@ -86,7 +86,7 @@ export function AppointmentsManagementPage() {
                   }
                   className="h-9 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 focus:border-amber-500 focus:outline-none"
                 >
-                  <option value="">Todos los barberos</option>
+                  <option value="">All barbers</option>
                   {barbers.map((b) => (
                     <option key={b.id} value={b.id}>
                       {b.name}
@@ -96,7 +96,7 @@ export function AppointmentsManagementPage() {
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="text-xs text-zinc-400">Fecha:</span>
+                <span className="text-xs text-zinc-400">Date:</span>
                 <input
                   type="date"
                   value={dateFilter}
@@ -111,13 +111,13 @@ export function AppointmentsManagementPage() {
                   className="flex items-center gap-1 text-xs text-zinc-400 hover:text-amber-400 transition-colors"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
-                  Limpiar filtros
+                  Clear filters
                 </button>
               )}
             </div>
 
             <div className="text-xs text-zinc-400 font-medium">
-              {appointments.length} citas encontradas
+              {appointments.length} appointments found
             </div>
           </div>
         </div>

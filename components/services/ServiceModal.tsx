@@ -101,10 +101,10 @@ export function ServiceModal({
             </div>
             <div>
               <h3 className="text-base font-bold text-white">
-                {service ? 'Editar Servicio' : 'Nuevo Servicio'}
+                {service ? 'Edit Service' : 'New Service'}
               </h3>
               <p className="text-xs text-zinc-400">
-                Catálogo de cortes, afeitados y tratamientos
+                Catalog of cuts, shaves and treatments
               </p>
             </div>
           </div>
@@ -126,11 +126,11 @@ export function ServiceModal({
         <form onSubmit={handleSubmit} className="mt-4 space-y-4">
           <div>
             <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
-              Nombre del Servicio *
+              Service Name *
             </label>
             <input
               type="text"
-              placeholder="Ej. 'Corte Clásico & Barba'"
+              placeholder="Ej. 'Classic Haircut & Beard'"
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-100 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none"
@@ -140,11 +140,11 @@ export function ServiceModal({
 
           <div>
             <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
-              Descripción
+              Description
             </label>
             <textarea
               rows={2}
-              placeholder="Ej. 'Incluye lavado, perfilado con toalla caliente y styling final'"
+              placeholder="Ej. 'Includes wash, hot towel shape up, and final styling'"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               className="w-full p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-100 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none"
@@ -154,7 +154,7 @@ export function ServiceModal({
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
-                Duración (minutos) *
+                Duration (minutes) *
               </label>
               <input
                 type="number"
@@ -169,7 +169,7 @@ export function ServiceModal({
 
             <div>
               <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
-                Precio (COP) *
+                Price (COP) *
               </label>
               <input
                 type="number"
@@ -185,9 +185,9 @@ export function ServiceModal({
 
           <div className="flex items-center justify-between p-3 rounded-xl bg-zinc-900/60 border border-zinc-800">
             <div>
-              <div className="text-xs font-semibold text-zinc-200">Servicio Activo</div>
+              <div className="text-xs font-semibold text-zinc-200">Service Active</div>
               <div className="text-[11px] text-zinc-400">
-                Los servicios inactivos no se pueden seleccionar al agendar citas
+                Inactive services cannot be selected when scheduling appointments
               </div>
             </div>
             <input
@@ -205,7 +205,7 @@ export function ServiceModal({
               onClick={onClose}
               className="text-xs border-zinc-800 hover:bg-zinc-900"
             >
-              Cancelar
+              Cancel
             </Button>
             <Button
               type="submit"
@@ -213,7 +213,7 @@ export function ServiceModal({
               className="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-semibold text-xs gap-1.5"
             >
               {loading && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-              <span>{service ? 'Guardar Cambios' : 'Crear Servicio'}</span>
+              <span>{service ? 'Save Changes' : 'Create Service'}</span>
             </Button>
           </div>
         </form>

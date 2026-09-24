@@ -47,7 +47,7 @@ export function ClientList({
         <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
         <input
           type="text"
-          placeholder="Buscar por nombre, teléfono o correo..."
+          placeholder="Search by name, phone or email..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full h-10 pl-10 pr-4 rounded-xl bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-100 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none transition-colors"
@@ -59,11 +59,11 @@ export function ClientList({
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-900 text-zinc-400 mb-3 border border-zinc-800">
             <User className="w-6 h-6" />
           </div>
-          <h4 className="text-sm font-bold text-white">No se encontraron clientes</h4>
+          <h4 className="text-sm font-bold text-white">No clients found</h4>
           <p className="mt-1 text-xs text-zinc-400 max-w-sm mx-auto">
             {searchTerm
-              ? 'No hay resultados que coincidan con la búsqueda.'
-              : 'Agrega clientes para ver su historial de turnos y fidelización.'}
+              ? 'No results match the search.'
+              : 'Add clients to see their appointment history and loyalty.'}
           </p>
         </div>
       ) : (
@@ -72,11 +72,11 @@ export function ClientList({
             <table className="w-full text-left text-xs">
               <thead className="border-b border-zinc-800 bg-zinc-950/60 text-zinc-400 font-semibold uppercase tracking-wider text-[10px]">
                 <tr>
-                  <th className="py-3.5 px-4">Cliente</th>
-                  <th className="py-3.5 px-4">Teléfono</th>
+                  <th className="py-3.5 px-4">Client</th>
+                  <th className="py-3.5 px-4">Phone</th>
                   <th className="py-3.5 px-4">Email</th>
-                  <th className="py-3.5 px-4 text-center">Citas</th>
-                  <th className="py-3.5 px-4 text-right">Acciones</th>
+                  <th className="py-3.5 px-4 text-center">Appointments</th>
+                  <th className="py-3.5 px-4 text-right">Actions</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-800/60 text-zinc-300">

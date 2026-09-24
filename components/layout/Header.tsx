@@ -45,7 +45,7 @@ export function Header({
         {/* Backend status indicator */}
         <div
           className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium border bg-zinc-900/80 border-zinc-800"
-          title={backendOnline ? 'Backend NestJS conectado' : 'Backend NestJS no detectado en localhost:3000'}
+          title={backendOnline ? 'NestJS backend connected' : 'NestJS backend not detected at localhost:3000'}
         >
           {backendOnline ? (
             <>
@@ -73,7 +73,7 @@ export function Header({
             className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-zinc-950 font-semibold shadow-lg shadow-amber-500/10 gap-1.5 h-9"
           >
             <Plus className="w-4 h-4 text-zinc-950" />
-            <span>Agendar Cita</span>
+            <span>Book Appointment</span>
           </Button>
         )}
       </div>

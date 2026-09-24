@@ -28,8 +28,8 @@ export default function ClientsManagementPage() {
   return (
     <div className="min-h-full pb-12">
       <Header
-        title="Directorio de Clientes"
-        subtitle="Registro de clientes, datos de contacto y fidelización"
+        title="Client Directory"
+        subtitle="Client registry, contact details and loyalty tracking"
       />
 
       <div className="p-6 max-w-7xl mx-auto space-y-6">
@@ -37,10 +37,10 @@ export default function ClientsManagementPage() {
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-sm font-bold text-white">
-              Clientes Registrados ({clients.length})
+              Registered Clients ({clients.length})
             </h3>
             <p className="text-xs text-zinc-400">
-              Busca por número de teléfono o añade un nuevo cliente a la base de datos
+              Search by phone number or add a new client to the database
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export default function ClientsManagementPage() {
             className="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-semibold text-xs gap-1.5 h-9"
           >
             <UserPlus className="w-4 h-4" />
-            <span>Nuevo Cliente</span>
+            <span>New Client</span>
           </Button>
         </div>
 

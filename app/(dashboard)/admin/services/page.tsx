@@ -28,8 +28,8 @@ export default function ServicesManagementPage() {
   return (
     <div className="min-h-full pb-12">
       <Header
-        title="Servicios & Tarifas"
-        subtitle="Administra la carta de servicios, precios en COP y duración en minutos"
+        title="Services & Rates"
+        subtitle="Manage the service menu, prices in COP and duration in minutes"
       />
 
       <div className="p-6 max-w-7xl mx-auto space-y-6">
@@ -37,10 +37,10 @@ export default function ServicesManagementPage() {
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-sm font-bold text-white">
-              Carta de Servicios ({services.length})
+              Service Menu ({services.length})
             </h3>
             <p className="text-xs text-zinc-400">
-              Estos servicios podrán ser asignados a los barberos y reservados por clientes
+              These services can be assigned to barbers and booked by clients
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export default function ServicesManagementPage() {
             className="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-semibold text-xs gap-1.5 h-9"
           >
             <Plus className="w-4 h-4" />
-            <span>Nuevo Servicio</span>
+            <span>New Service</span>
           </Button>
         </div>
 

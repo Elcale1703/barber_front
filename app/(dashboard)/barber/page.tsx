@@ -33,8 +33,8 @@ export default function BarberPortalPage() {
   return (
     <div className="min-h-full pb-12">
       <Header
-        title={`Mi Agenda • ${user?.name || 'Barbero Staff'}`}
-        subtitle="Turnos asignados, clientes del día y métricas personales de tu sillón"
+        title={`My Schedule • ${user?.name || 'Barber Staff'}`}
+        subtitle="Assigned shifts, today's clients and personal metrics for your chair"
         onNewAppointment={() => setNewAptModalOpen(true)}
       />
 
@@ -45,13 +45,13 @@ export default function BarberPortalPage() {
             <div>
               <div className="flex items-center gap-2 text-xs font-semibold text-amber-400 mb-1">
                 <Scissors className="w-4 h-4" />
-                <span>Espacio de Trabajo del Barbero</span>
+                <span>Barber Workspace</span>
               </div>
               <h2 className="text-xl font-black text-white">
-                ¡Hola, {user?.name || 'Colega'}! 💈
+                Hello, {user?.name || 'Colleague'}! 💈
               </h2>
               <p className="text-xs text-zinc-400 mt-0.5">
-                Aquí tienes el resumen de tu jornada laboral y el listado de clientes que atenderás hoy.
+                Here's a summary of your workday and the list of clients you'll attend today.
               </p>
             </div>
 
@@ -60,7 +60,7 @@ export default function BarberPortalPage() {
               className="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold text-xs gap-1.5 h-10 px-4 rounded-xl shrink-0"
             >
               <Plus className="w-4 h-4" />
-              <span>Agendar Cliente Walk-in</span>
+              <span>Book Walk-in Client</span>
             </Button>
           </div>
         </div>
@@ -74,10 +74,10 @@ export default function BarberPortalPage() {
             <div>
               <h3 className="text-base font-bold text-white flex items-center gap-2">
                 <Calendar className="w-5 h-5 text-amber-400" />
-                Mis Citas Programadas
+                My Scheduled Appointments
               </h3>
               <p className="text-xs text-zinc-400">
-                Cambia el estado conforme el cliente llega o finalizas el corte
+                Update status as the client arrives or when you finish the cut
               </p>
             </div>
 
@@ -91,7 +91,7 @@ export default function BarberPortalPage() {
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
-                Citas de Hoy
+                Today's Appointments
               </button>
               <button
                 onClick={() => setFilterMode('pending')}
@@ -101,7 +101,7 @@ export default function BarberPortalPage() {
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
-                Por Atender
+                Upcoming
               </button>
               <button
                 onClick={() => setFilterMode('all')}
@@ -111,7 +111,7 @@ export default function BarberPortalPage() {
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
-                Historial Completo
+                Full History
               </button>
             </div>
           </div>

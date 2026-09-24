@@ -87,10 +87,10 @@ export function ClientModal({
             </div>
             <div>
               <h3 className="text-base font-bold text-white">
-                {client ? 'Editar Cliente' : 'Nuevo Cliente'}
+                {client ? 'Edit Client' : 'New Client'}
               </h3>
               <p className="text-xs text-zinc-400">
-                Directorio de clientes de la barbería
+                Clients directory of the barbershop
               </p>
             </div>
           </div>
@@ -112,7 +112,7 @@ export function ClientModal({
         <form onSubmit={handleSubmit} className="mt-4 space-y-4">
           <div>
             <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
-              Nombre Completo *
+              Full Name *
             </label>
             <input
               type="text"
@@ -126,7 +126,7 @@ export function ClientModal({
 
           <div>
             <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
-              Teléfono Celular *
+              Phone Number *
             </label>
             <input
               type="tel"
@@ -140,11 +140,11 @@ export function ClientModal({
 
           <div>
             <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
-              Correo Electrónico (opcional)
+              Email (optional)
             </label>
             <input
               type="email"
-              placeholder="Ej. 'mateo@ejemplo.com'"
+              placeholder="Ej. '[EMAIL_ADDRESS]'"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-100 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none"
@@ -158,7 +158,7 @@ export function ClientModal({
               onClick={onClose}
               className="text-xs border-zinc-800 hover:bg-zinc-900"
             >
-              Cancelar
+              Cancel
             </Button>
             <Button
               type="submit"
@@ -166,7 +166,7 @@ export function ClientModal({
               className="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-semibold text-xs gap-1.5"
             >
               {loading && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-              <span>{client ? 'Guardar Cambios' : 'Crear Cliente'}</span>
+              <span>{client ? 'Save Changes' : 'Create Client'}</span>
             </Button>
           </div>
         </form>

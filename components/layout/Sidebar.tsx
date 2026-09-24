@@ -29,16 +29,16 @@ export function Sidebar({ className }: { className?: string }) {
   const { user, role, logout } = useAuth();
 
   const adminNavItems: NavItem[] = [
-    { label: 'Visión General', href: '/admin', icon: LayoutDashboard },
-    { label: 'Citas & Agenda', href: '/admin/appointments', icon: Calendar },
-    { label: 'Barberos', href: '/admin/barbers', icon: Users },
-    { label: 'Servicios', href: '/admin/services', icon: Sparkles },
-    { label: 'Clientes', href: '/admin/clients', icon: UserCheck },
+    { label: 'Overview', href: '/admin', icon: LayoutDashboard },
+    { label: 'Appointments & Schedule', href: '/admin/appointments', icon: Calendar },
+    { label: 'Barbers', href: '/admin/barbers', icon: Users },
+    { label: 'Services', href: '/admin/services', icon: Sparkles },
+    { label: 'Clients', href: '/admin/clients', icon: UserCheck },
   ];
 
   const barberNavItems: NavItem[] = [
-    { label: 'Mi Agenda', href: '/barber', icon: Calendar },
-    { label: 'Mis Horarios', href: '/barber/schedule', icon: Clock },
+    { label: 'My Schedule', href: '/barber', icon: Calendar },
+    { label: 'My Hours', href: '/barber/schedule', icon: Clock },
   ];
 
   const navItems = role === 'ADMIN' ? adminNavItems : barberNavItems;
@@ -57,10 +57,10 @@ export function Sidebar({ className }: { className?: string }) {
         </div>
         <div>
           <h1 className="text-base font-bold tracking-tight text-white flex items-center gap-1.5">
-            BARBERÍA <span className="text-amber-400">PRO</span>
+            BARBERIA <span className="text-amber-400">PRO</span>
           </h1>
           <p className="text-[10px] font-medium uppercase tracking-widest text-zinc-400">
-            {role === 'ADMIN' ? 'Panel de Administración' : 'Portal del Barbero'}
+            {role === 'ADMIN' ? 'Administration Panel' : 'Barber Portal'}
           </p>
         </div>
       </div>
@@ -68,7 +68,7 @@ export function Sidebar({ className }: { className?: string }) {
       {/* Navigation */}
       <nav className="flex-1 px-3 py-6 space-y-1 overflow-y-auto">
         <div className="px-3 pb-2 text-[10px] font-semibold uppercase tracking-wider text-zinc-400">
-          Menú Principal
+          Main Menu
         </div>
         {navItems.map((item) => {
           const Icon = item.icon;
@@ -112,16 +112,16 @@ export function Sidebar({ className }: { className?: string }) {
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-xs font-semibold text-zinc-200 truncate">
-              {user?.name || 'Usuario'}
+              {user?.name || 'User'}
             </p>
             <p className="text-[11px] text-zinc-400 truncate">
-              {role === 'ADMIN' ? 'Super Administrador' : `Barbero (ID: #${user?.barberId})`}
+              {role === 'ADMIN' ? 'Super Administrator' : `Barber (ID: #${user?.barberId})`}
             </p>
           </div>
           <button
             onClick={logout}
             className="p-1.5 text-zinc-400 hover:text-rose-400 hover:bg-rose-500/10 rounded-lg transition-colors"
-            title="Cerrar sesión"
+            title="Sign out"
           >
             <LogOut className="w-4 h-4" />
           </button>

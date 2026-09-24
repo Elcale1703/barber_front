@@ -22,7 +22,7 @@ export default function DashboardLayout({
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse">
             <Scissors className="w-6 h-6" />
           </div>
-          <p className="text-xs text-zinc-400">Cargando panel de barbería...</p>
+          <p className="text-xs text-zinc-400">Loading barbershop panel...</p>
         </div>
       </div>
     );
@@ -60,7 +60,7 @@ export default function DashboardLayout({
           </button>
           <div className="flex items-center gap-2">
             <Scissors className="w-5 h-5 text-amber-400" />
-            <span className="font-bold text-sm text-white">BARBERÍA PRO</span>
+            <span className="font-bold text-sm text-white">BARBERIA PRO</span>
           </div>
         </div>
 

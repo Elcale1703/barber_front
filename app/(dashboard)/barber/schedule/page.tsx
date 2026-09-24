@@ -30,14 +30,14 @@ export default function BarberScheduleViewerPage() {
   const schedules = barber?.schedules || [];
   const assignedServices = barber?.services || [];
 
-  // Order days from Lunes (1) to Domingo (0)
+  // Order days from Monday (1) to Sunday (0)
   const daysOrder = [1, 2, 3, 4, 5, 6, 0];
 
   return (
     <div className="min-h-full pb-12">
       <Header
-        title="Mis Horarios & Especialidades"
-        subtitle={`Horario laboral semanal y catálogo de servicios asignados a ${user?.name || 'tu perfil'}`}
+        title="My Schedule & Specialties"
+        subtitle={`Weekly work schedule and assigned services catalog for ${user?.name || 'your profile'}`}
       />
 
       <div className="p-6 max-w-7xl mx-auto space-y-6">
@@ -50,10 +50,10 @@ export default function BarberScheduleViewerPage() {
               </div>
               <div>
                 <h3 className="text-base font-bold text-white">
-                  Mi Horario de Atención Semanal
+                  My Weekly Work Schedule
                 </h3>
                 <p className="text-xs text-zinc-400">
-                  Días y turnos en los que el sistema acepta reservas automáticas
+                  Days and shifts when the system accepts automatic bookings
                 </p>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function BarberScheduleViewerPage() {
               </div>
             ) : schedules.length === 0 ? (
               <div className="p-6 text-center text-xs text-zinc-400 border border-dashed border-zinc-800 rounded-2xl">
-                Aún no tienes horarios asignados por la administración.
+                You don't have any schedules assigned by administration yet.
               </div>
             ) : (
               <div className="space-y-2">
@@ -95,14 +95,14 @@ export default function BarberScheduleViewerPage() {
                           <span className="px-2.5 py-1 rounded-lg bg-zinc-800 text-xs font-semibold text-amber-300 border border-zinc-700">
                             {formatMinutesToTime(schedule.startMinute)}
                           </span>
-                          <span className="text-zinc-500 text-xs">hasta</span>
+                          <span className="text-zinc-500 text-xs">to</span>
                           <span className="px-2.5 py-1 rounded-lg bg-zinc-800 text-xs font-semibold text-amber-300 border border-zinc-700">
                             {formatMinutesToTime(schedule.endMinute)}
                           </span>
                         </div>
                       ) : (
                         <span className="text-xs text-zinc-500 italic">
-                          Día de descanso
+                          Day off
                         </span>
                       )}
                     </div>
@@ -120,10 +120,10 @@ export default function BarberScheduleViewerPage() {
               </div>
               <div>
                 <h3 className="text-base font-bold text-white">
-                  Servicios que Realizo ({assignedServices.length})
+                  Services I Perform ({assignedServices.length})
                 </h3>
                 <p className="text-xs text-zinc-400">
-                  Cortes, perfilados y tratamientos autorizados para tu perfil
+                  Haircuts, trims and treatments authorized for your profile
                 </p>
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function BarberScheduleViewerPage() {
               </div>
             ) : assignedServices.length === 0 ? (
               <div className="p-6 text-center text-xs text-zinc-400 border border-dashed border-zinc-800 rounded-2xl">
-                No tienes servicios asignados aún.
+                You don't have any services assigned yet.
               </div>
             ) : (
               <div className="space-y-2.5 max-h-[480px] overflow-y-auto pr-1">
@@ -161,7 +161,7 @@ export default function BarberScheduleViewerPage() {
                             {service.name}
                           </div>
                           <div className="text-[11px] text-zinc-400">
-                            {service.duration} minutos de duración
+                            {service.duration} min duration
                           </div>
                         </div>
                       </div>

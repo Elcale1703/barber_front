@@ -67,34 +67,34 @@ export function AdminMetrics({
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <StatCard
-        title="Ingresos Totales"
+        title="Total Revenue"
         value={formatCurrency(totalRevenue)}
-        subtitle={`Hoy: ${formatCurrency(todayRevenue)}`}
+        subtitle={`Today: ${formatCurrency(todayRevenue)}`}
         icon={DollarSign}
         accentColor="amber"
         trend={{ value: '+14%', positive: true }}
       />
 
       <StatCard
-        title="Citas de Hoy"
+        title="Today's Appointments"
         value={todayAppointments.length}
-        subtitle={`${completedOrConfirmed.length} citas activas`}
+        subtitle={`${completedOrConfirmed.length} active appointments`}
         icon={CalendarCheck}
         accentColor="emerald"
       />
 
       <StatCard
-        title="Barberos Activos"
+        title="Active Barbers"
         value={activeBarbers}
-        subtitle={`De ${barbers.length} en el staff`}
+        subtitle={`Of ${barbers.length} on staff`}
         icon={Scissors}
         accentColor="blue"
       />
 
       <StatCard
-        title="Clientes Registrados"
+        title="Registered Clients"
         value={clients.length}
-        subtitle={`${completionRate}% tasa cumplimiento`}
+        subtitle={`${completionRate}% completion rate`}
         icon={Users}
         accentColor="purple"
         trend={{ value: `${completionRate}%`, positive: completionRate >= 80 }}

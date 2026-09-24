@@ -39,7 +39,7 @@ export default function LoginPage() {
     try {
       await login({ email, password });
     } catch (err: any) {
-      setError(err.message || 'Error al iniciar sesión');
+      setError(err.message || 'Failed to sign in');
     } finally {
       setLoading(false);
     }
@@ -54,7 +54,7 @@ export default function LoginPage() {
         role: 'ADMIN',
       });
     } catch (err: any) {
-      setError(err.message || 'Error al iniciar sesión');
+      setError(err.message || 'Failed to sign in');
     } finally {
       setLoading(false);
     }
@@ -65,12 +65,12 @@ export default function LoginPage() {
     setError(null);
     try {
       await login({
-        email: `barbero${barberId}@barberia.com`,
+        email: `barber${barberId}@barberia.com`,
         role: 'BARBER',
         barberId,
       });
     } catch (err: any) {
-      setError(err.message || 'Error al iniciar sesión');
+      setError(err.message || 'Failed to sign in');
     } finally {
       setLoading(false);
     }
@@ -89,10 +89,10 @@ export default function LoginPage() {
             <Scissors className="h-7 w-7" />
           </div>
           <h1 className="text-2xl font-black tracking-tight text-white">
-            BARBERÍA <span className="text-amber-400">PRO</span>
+            BARBERIA <span className="text-amber-400">PRO</span>
           </h1>
           <p className="text-xs text-zinc-400 mt-1">
-            Sistema Integral de Gestión & Panel de Barberos
+            Integrated Management System & Barber Panel
           </p>
         </div>
 
@@ -108,7 +108,7 @@ export default function LoginPage() {
             <div className="flex items-center justify-between text-xs text-zinc-400">
               <span className="flex items-center gap-1.5 font-semibold text-zinc-300">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                Acceso Rápido por Rol (JWT)
+                Quick Role Access (JWT)
               </span>
               <span className="text-[10px] bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded-full">
                 Demo
@@ -127,10 +127,10 @@ export default function LoginPage() {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white group-hover:text-amber-300">
-                    Entrar como Administrador
+                    Sign in as Administrator
                   </div>
                   <div className="text-[11px] text-zinc-400">
-                    Control total de negocio, citas, barberos y servicios
+                    Full control of business, appointments, barbers and services
                   </div>
                 </div>
               </div>
@@ -149,12 +149,12 @@ export default function LoginPage() {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white group-hover:text-amber-300">
-                    Entrar como Barbero
+                    Sign in as Barber
                   </div>
                   <div className="text-[11px] text-zinc-400">
                     {barbers.length > 0
-                      ? `Portal personal de ${barbers[0].name}`
-                      : 'Agenda y métricas del barbero'}
+                      ? `${barbers[0].name}'s personal portal`
+                      : 'Schedule and barber metrics'}
                   </div>
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function LoginPage() {
           <form onSubmit={handleCustomLogin} className="mt-6 space-y-4">
             <div className="relative">
               <span className="text-[11px] uppercase tracking-wider text-zinc-400 block mb-1.5 font-semibold">
-                O iniciar con credenciales
+                Or sign in with credentials
               </span>
               <div className="relative">
                 <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
@@ -201,7 +201,7 @@ export default function LoginPage() {
               {loading ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
               ) : (
-                'Iniciar Sesión'
+                'Sign In'
               )}
             </Button>
           </form>
@@ -209,7 +209,7 @@ export default function LoginPage() {
 
         {/* Footer info */}
         <p className="text-center text-xs text-zinc-400 mt-6">
-          Conectado con API NestJS local en <span className="text-zinc-400 font-mono">http://localhost:3000</span>
+          Connected to local NestJS API at <span className="text-zinc-400 font-mono">http://localhost:3000</span>
         </p>
       </div>
     </div>

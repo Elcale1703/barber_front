@@ -61,9 +61,9 @@ export function NewAppointmentModal({
 
   useEffect(() => {
     if (isOpen) {
-      barberApi.getAll(true).then(setBarbers).catch(() => {});
-      serviceApi.getAll(true).then(setServices).catch(() => {});
-      clientApi.getAll().then(setClients).catch(() => {});
+      barberApi.getAll(true).then(setBarbers).catch(() => { });
+      serviceApi.getAll(true).then(setServices).catch(() => { });
+      clientApi.getAll().then(setClients).catch(() => { });
 
       if (defaultBarberId) {
         setSelectedBarberId(defaultBarberId);
@@ -151,9 +151,9 @@ export function NewAppointmentModal({
               <Calendar className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-white">Agendar Nueva Cita</h3>
+              <h3 className="text-base font-bold text-white">Schedule New Appointment</h3>
               <p className="text-xs text-zinc-400">
-                Reserva un turno con cálculo automático de disponibilidad
+                Book an appointment with automatic availability calculation
               </p>
             </div>
           </div>
@@ -177,7 +177,7 @@ export function NewAppointmentModal({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
-                Barbero
+                Barber
               </label>
               <select
                 value={selectedBarberId || ''}
@@ -199,7 +199,7 @@ export function NewAppointmentModal({
 
             <div>
               <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
-                Servicio
+                Service
               </label>
               <select
                 value={selectedServiceId || ''}
@@ -222,7 +222,7 @@ export function NewAppointmentModal({
           {/* Date Picker */}
           <div>
             <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
-              Fecha de la Cita
+              Appointment Date
             </label>
             <input
               type="date"
@@ -252,26 +252,24 @@ export function NewAppointmentModal({
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-semibold text-zinc-300 flex items-center gap-1.5">
                 <User className="w-3.5 h-3.5 text-amber-400" />
-                Datos del Cliente
+                Client Data
               </span>
               <div className="flex rounded-lg bg-zinc-900 p-0.5 border border-zinc-800">
                 <button
                   type="button"
                   onClick={() => setIsNewClient(true)}
-                  className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all ${
-                    isNewClient ? 'bg-amber-500 text-zinc-950 font-bold' : 'text-zinc-400'
-                  }`}
+                  className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all ${isNewClient ? 'bg-amber-500 text-zinc-950 font-bold' : 'text-zinc-400'
+                    }`}
                 >
-                  Nuevo
+                  New
                 </button>
                 <button
                   type="button"
                   onClick={() => setIsNewClient(false)}
-                  className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all ${
-                    !isNewClient ? 'bg-amber-500 text-zinc-950 font-bold' : 'text-zinc-400'
-                  }`}
+                  className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all ${!isNewClient ? 'bg-amber-500 text-zinc-950 font-bold' : 'text-zinc-400'
+                    }`}
                 >
-                  Existente
+                  Existing
                 </button>
               </div>
             </div>
@@ -281,7 +279,7 @@ export function NewAppointmentModal({
                 <div>
                   <input
                     type="text"
-                    placeholder="Nombre completo *"
+                    placeholder="Full Name *"
                     value={clientName}
                     onChange={(e) => setClientName(e.target.value)}
                     className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-100 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none"
@@ -291,7 +289,7 @@ export function NewAppointmentModal({
                 <div>
                   <input
                     type="tel"
-                    placeholder="Teléfono móvil *"
+                    placeholder="Mobile Phone *"
                     value={clientPhone}
                     onChange={(e) => setClientPhone(e.target.value)}
                     className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-100 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none"
@@ -301,7 +299,7 @@ export function NewAppointmentModal({
                 <div className="sm:col-span-2">
                   <input
                     type="email"
-                    placeholder="Correo electrónico (opcional)"
+                    placeholder="Email (optional)"
                     value={clientEmail}
                     onChange={(e) => setClientEmail(e.target.value)}
                     className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-100 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none"
@@ -315,7 +313,7 @@ export function NewAppointmentModal({
                   onChange={(e) => setSelectedClientId(Number(e.target.value) || undefined)}
                   className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-100 focus:border-amber-500 focus:outline-none"
                 >
-                  <option value="">-- Seleccionar de clientes registrados --</option>
+                  <option value="">-- Select from registered clients --</option>
                   {clients.map((c) => (
                     <option key={c.id} value={c.id}>
                       {c.name} ({c.phone})
@@ -329,11 +327,11 @@ export function NewAppointmentModal({
           {/* Notes */}
           <div>
             <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
-              Notas / Preferencias (opcional)
+              Notes / Preferences (optional)
             </label>
             <input
               type="text"
-              placeholder="Ej. 'Corte degradado bajo con navaja'"
+              placeholder="Ex. 'Low fade cut with razor'"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-100 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none"
@@ -348,7 +346,7 @@ export function NewAppointmentModal({
               onClick={onClose}
               className="text-xs border-zinc-800 hover:bg-zinc-900"
             >
-              Cancelar
+              Cancel
             </Button>
             <Button
               type="submit"
@@ -356,7 +354,7 @@ export function NewAppointmentModal({
               className="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-semibold text-xs gap-1.5"
             >
               {loading && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-              <span>Confirmar Cita</span>
+              <span>Confirm Appointment</span>
             </Button>
           </div>
         </form>

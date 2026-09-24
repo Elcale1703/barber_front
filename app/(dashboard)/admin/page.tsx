@@ -41,8 +41,8 @@ export default function AdminOverviewPage() {
   return (
     <div className="min-h-full pb-12">
       <Header
-        title="Visión General"
-        subtitle="Métricas globales de la barbería y actividad del día"
+        title="Overview"
+        subtitle="Global barbershop metrics and today's activity"
         onNewAppointment={() => setNewAptModalOpen(true)}
       />
 
@@ -67,10 +67,10 @@ export default function AdminOverviewPage() {
               </div>
               <div>
                 <div className="text-xs font-bold text-white group-hover:text-amber-300">
-                  Agendar Cita
+                  Book Appointment
                 </div>
                 <div className="text-[10px] text-zinc-400">
-                  Disponibilidad en vivo
+                  Live availability
                 </div>
               </div>
             </div>
@@ -87,10 +87,10 @@ export default function AdminOverviewPage() {
               </div>
               <div>
                 <div className="text-xs font-bold text-white group-hover:text-amber-300">
-                  Equipo Barberos
+                  Barber Team
                 </div>
                 <div className="text-[10px] text-zinc-400">
-                  {barbers.length} registrados
+                  {barbers.length} registered
                 </div>
               </div>
             </div>
@@ -107,10 +107,10 @@ export default function AdminOverviewPage() {
               </div>
               <div>
                 <div className="text-xs font-bold text-white group-hover:text-amber-300">
-                  Servicios & Tarifas
+                  Services & Rates
                 </div>
                 <div className="text-[10px] text-zinc-400">
-                  {services.length} disponibles
+                  {services.length} available
                 </div>
               </div>
             </div>
@@ -127,10 +127,10 @@ export default function AdminOverviewPage() {
               </div>
               <div>
                 <div className="text-xs font-bold text-white group-hover:text-amber-300">
-                  Clientes
+                  Clients
                 </div>
                 <div className="text-[10px] text-zinc-400">
-                  {clients.length} registrados
+                  {clients.length} registered
                 </div>
               </div>
             </div>
@@ -144,17 +144,17 @@ export default function AdminOverviewPage() {
             <div>
               <h3 className="text-base font-bold text-white flex items-center gap-2">
                 <Calendar className="w-5 h-5 text-amber-400" />
-                Agenda del Día ({todayAppointments.length})
+                Today's Schedule ({todayAppointments.length})
               </h3>
               <p className="text-xs text-zinc-400">
-                Citas programadas para la jornada de hoy
+                Appointments scheduled for today's shift
               </p>
             </div>
             <Link
               href="/admin/appointments"
               className="text-xs text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1"
             >
-              Ver todas las citas
+              View all appointments
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>

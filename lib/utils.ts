@@ -1,7 +1,6 @@
 import { type ClassValue } from "clsx";
 import { cn as baseCn } from "cn";
 import { format, parseISO } from "date-fns";
-import { es } from "date-fns/locale";
 
 export function cn(...inputs: any[]) {
   return baseCn(...inputs);
@@ -49,30 +48,30 @@ export function parseTimeToMinutes(timeStr: string): number {
 }
 
 /**
- * Converts day number (0-6) to day name in Spanish
+ * Converts day number (0-6) to day name in English
  */
 export const DAYS_OF_WEEK = [
-  "Domingo",
-  "Lunes",
-  "Martes",
-  "Miércoles",
-  "Jueves",
-  "Viernes",
-  "Sábado",
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
 ];
 
 export function getDayName(dayOfWeek: number): string {
-  return DAYS_OF_WEEK[dayOfWeek] ?? `Día ${dayOfWeek}`;
+  return DAYS_OF_WEEK[dayOfWeek] ?? `Day ${dayOfWeek}`;
 }
 
 /**
  * Formats an ISO date string to a human readable format
- * e.g. "12 de Septiembre, 2026"
+ * e.g. "September 12, 2026"
  */
 export function formatFullDate(isoString: string): string {
   try {
     const date = parseISO(isoString);
-    return format(date, "d 'de' MMMM, yyyy", { locale: es });
+    return format(date, "MMMM d, yyyy");
   } catch {
     return isoString;
   }
@@ -85,19 +84,19 @@ export function formatFullDate(isoString: string): string {
 export function formatTimeOnly(isoString: string): string {
   try {
     const date = parseISO(isoString);
-    return format(date, "hh:mm a", { locale: es });
+    return format(date, "hh:mm a");
   } catch {
     return isoString;
   }
 }
 
 /**
- * Formats an ISO date to short date (e.g. "12 Sep - 03:00 PM")
+ * Formats an ISO date to short date (e.g. "Sep 12 - 03:00 PM")
  */
 export function formatShortDateTime(isoString: string): string {
   try {
     const date = parseISO(isoString);
-    return format(date, "d MMM, hh:mm a", { locale: es });
+    return format(date, "MMM d, hh:mm a");
   } catch {
     return isoString;
   }

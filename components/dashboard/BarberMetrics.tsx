@@ -37,34 +37,34 @@ export function BarberMetrics({ appointments }: BarberMetricsProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <StatCard
-        title="Mis Citas Hoy"
+        title="My Appointments Today"
         value={todayApts.length}
-        subtitle={`${completedToday} ya atendidos`}
+        subtitle={`${completedToday} already served`}
         icon={Calendar}
         accentColor="amber"
       />
 
       <StatCard
-        title="Cortes Completados"
+        title="Completed Cuts"
         value={completedToday}
-        subtitle="Hoy finalizados"
+        subtitle="Today finalized"
         icon={CheckCircle2}
         accentColor="emerald"
         trend={{ value: `${completedToday}/${todayApts.length}`, positive: true }}
       />
 
       <StatCard
-        title="Ingresos Estimados Hoy"
+        title="Estimated Earnings Today"
         value={formatCurrency(todayEarnings)}
-        subtitle="En servicios programados"
+        subtitle="In scheduled services"
         icon={DollarSign}
         accentColor="blue"
       />
 
       <StatCard
-        title="Citas por Atender"
+        title="Appointments to Serve"
         value={pendingApts}
-        subtitle="Próximas en agenda"
+        subtitle="Next in agenda"
         icon={Clock}
         accentColor="purple"
       />

@@ -11,27 +11,27 @@ interface StatusConfig {
 
 const statusConfigs: Record<AppointmentStatus, StatusConfig> = {
   CONFIRMED: {
-    label: 'Confirmada',
+    label: 'Confirmed',
     className: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
     icon: CheckCircle2,
   },
   PENDING: {
-    label: 'Pendiente',
+    label: 'Pending',
     className: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
     icon: Clock,
   },
   COMPLETED: {
-    label: 'Completada',
+    label: 'Completed',
     className: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
     icon: CheckCheck,
   },
   CANCELLED: {
-    label: 'Cancelada',
+    label: 'Cancelled',
     className: 'bg-rose-500/10 text-rose-400 border-rose-500/20',
     icon: XCircle,
   },
   NO_SHOW: {
-    label: 'No Asistió',
+    label: 'No Show',
     className: 'bg-zinc-500/10 text-zinc-400 border-zinc-500/20',
     icon: UserX,
   },

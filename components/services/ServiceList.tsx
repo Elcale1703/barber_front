@@ -38,9 +38,9 @@ export function ServiceList({
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-900 text-zinc-400 mb-3 border border-zinc-800">
           <Sparkles className="w-6 h-6" />
         </div>
-        <h4 className="text-sm font-bold text-white">No hay servicios registrados</h4>
+        <h4 className="text-sm font-bold text-white">No services found</h4>
         <p className="mt-1 text-xs text-zinc-400 max-w-sm mx-auto">
-          Agrega cortes de cabello, afeitados y tratamientos al menú de servicios de la barbería.
+          Add haircuts, shaves and treatments to the barbershop service menu.
         </p>
       </div>
     );
@@ -59,13 +59,12 @@ export function ServiceList({
                 {service.name}
               </h4>
               <span
-                className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold border shrink-0 ${
-                  service.active
-                    ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                    : 'bg-zinc-800 text-zinc-400 border-zinc-700'
-                }`}
+                className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold border shrink-0 ${service.active
+                  ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                  : 'bg-zinc-800 text-zinc-400 border-zinc-700'
+                  }`}
               >
-                {service.active ? 'Activo' : 'Inactivo'}
+                {service.active ? 'Active' : 'Inactive'}
               </span>
             </div>
 
@@ -78,7 +77,7 @@ export function ServiceList({
             <div className="mt-4 flex items-center justify-between text-xs pt-3 border-t border-zinc-800/60">
               <span className="flex items-center gap-1.5 text-zinc-400">
                 <Clock className="w-3.5 h-3.5 text-amber-400" />
-                {service.duration} minutos
+                {service.duration} minutes
               </span>
               <span className="text-sm font-bold text-amber-400">
                 {formatCurrency(service.price)}

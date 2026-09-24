@@ -48,7 +48,7 @@ export function AvailabilitySlots({
         }
       } catch (err: any) {
         if (isMounted) {
-          setError(err.message || 'Error al obtener disponibilidad');
+          setError(err.message || 'Failed to fetch availability');
           setSlots([]);
         }
       } finally {
@@ -68,7 +68,7 @@ export function AvailabilitySlots({
   if (!barberId || !serviceId || !date) {
     return (
       <div className="rounded-xl border border-dashed border-zinc-800 p-4 text-center text-xs text-zinc-400">
-        Selecciona un barbero, servicio y fecha para calcular los turnos disponibles.
+        Select a barber, service and date to calculate available slots.
       </div>
     );
   }
@@ -77,7 +77,7 @@ export function AvailabilitySlots({
     return (
       <div className="flex items-center justify-center gap-2 p-6 text-xs text-zinc-400">
         <Loader2 className="w-4 h-4 animate-spin text-amber-400" />
-        <span>Consultando horarios y citas del barbero...</span>
+        <span>Checking barber schedule and appointments...</span>
       </div>
     );
   }
@@ -94,7 +94,7 @@ export function AvailabilitySlots({
   if (slots.length === 0) {
     return (
       <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 text-center text-xs text-zinc-400">
-        No hay turnos disponibles para este barbero en la fecha seleccionada o no tiene horario configurado para este día.
+        No available slots for this barber on the selected date, or no schedule configured for this day.
       </div>
     );
   }
@@ -104,9 +104,9 @@ export function AvailabilitySlots({
       <div className="flex items-center justify-between text-xs text-zinc-400">
         <span className="flex items-center gap-1.5 font-medium text-zinc-300">
           <Clock className="w-3.5 h-3.5 text-amber-400" />
-          Turnos Disponibles ({slots.length})
+          Available Slots ({slots.length})
         </span>
-        <span className="text-[11px] text-zinc-400">Selecciona un horario</span>
+        <span className="text-[11px] text-zinc-400">Select a time slot</span>
       </div>
 
       <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 max-h-48 overflow-y-auto pr-1">
